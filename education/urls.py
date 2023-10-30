@@ -3,8 +3,10 @@ from django.urls import path
 from education.apps import EducationConfig
 from rest_framework.routers import DefaultRouter
 
-from education.views import CourseViewSet, LessonCreateAPIView, LessonListAPIView, LessonRetrieveAPIView, \
-    LessonUpdateAPIView, LessonDestroyAPIView, CourseRetrieveAPIView, PaymentListAPIView, PaymentRetrieveAPIView
+from education.views.course import CourseViewSet, CourseRetrieveAPIView
+from education.views.lesson import LessonCreateAPIView, LessonListAPIView, LessonRetrieveAPIView, LessonUpdateAPIView, \
+    LessonDestroyAPIView
+from education.views.payment import PaymentListAPIView, PaymentRetrieveAPIView
 
 app_name = EducationConfig.name
 
