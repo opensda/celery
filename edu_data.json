@@ -1,0 +1,143 @@
+[
+  {
+    "model": "education.course",
+    "pk": 1,
+    "fields": {
+      "name": "Dhango - DRF SKY",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 2,
+    "fields": {
+      "name": "Java",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 3,
+    "fields": {
+      "name": "python",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 4,
+    "fields": {
+      "name": "java",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 5,
+    "fields": {
+      "name": "C",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 6,
+    "fields": {
+      "name": "sql",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 2,
+    "fields": {
+      "name": "deploy",
+      "image": "",
+      "description": "просто деплой",
+      "video_link": null,
+      "course": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "123",
+      "image": "",
+      "description": "123",
+      "video_link": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 4,
+    "fields": {
+      "name": "Информатика",
+      "image": "",
+      "description": null,
+      "video_link": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "date": "2023-10-22T13:19:27Z",
+      "course": 3,
+      "lesson": null,
+      "total": 100000.0,
+      "payment_choice": "наличные"
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "date": "2023-09-07T23:16:24Z",
+      "course": 4,
+      "lesson": null,
+      "total": 150000.0,
+      "payment_choice": "наличные"
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "date": "2023-10-21T09:55:37Z",
+      "course": 5,
+      "lesson": null,
+      "total": 200000.0,
+      "payment_choice": "перевод на счет"
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "date": "2023-10-09T06:16:24Z",
+      "course": 6,
+      "lesson": null,
+      "total": 70000.0,
+      "payment_choice": "перевод на счет"
+    }
+  }
+]

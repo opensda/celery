@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'education',
     'users',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
