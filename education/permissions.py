@@ -19,6 +19,3 @@ class IsOwner(BasePermission):
         if request.user.role == obj.user:
             return True
         return False
-
-
-

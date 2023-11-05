@@ -4,14 +4,17 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('education', '0005_alter_lesson_course_payment'),
+        ("education", "0005_alter_lesson_course_payment"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='payment',
-            options={'ordering': ('date',), 'verbose_name': 'платеж', 'verbose_name_plural': 'платежи'},
+            name="payment",
+            options={
+                "ordering": ("date",),
+                "verbose_name": "платеж",
+                "verbose_name_plural": "платежи",
+            },
         ),
     ]

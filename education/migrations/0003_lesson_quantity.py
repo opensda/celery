@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('education', '0002_initial'),
+        ("education", "0002_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='lesson',
-            name='quantity',
-            field=models.PositiveIntegerField(blank=True, null=True, verbose_name='количество уроков'),
+            model_name="lesson",
+            name="quantity",
+            field=models.PositiveIntegerField(
+                blank=True, null=True, verbose_name="количество уроков"
+            ),
         ),
     ]

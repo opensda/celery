@@ -1,12 +1,19 @@
 from rest_framework import generics
 
 from education.models import Lesson
-from education.serializers.lesson import LessonListSerializer, LessonDetailSerializer, LessonSerializer
+from education.paginators import LessonPaginator
+from education.serializers.lesson import (
+    LessonListSerializer,
+    LessonDetailSerializer,
+    LessonSerializer,
+)
 
 
 class LessonListAPIView(generics.ListAPIView):
     serializer_class = LessonListSerializer
     queryset = Lesson.objects.all()
+    pagination_class = LessonPaginator
+
 
 class LessonCreateAPIView(generics.CreateAPIView):
     serializer_class = LessonSerializer

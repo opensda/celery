@@ -25,18 +25,30 @@ class Command(BaseCommand):
         sql = Course.objects.create(name="sql")
 
         payments = [
-            {'user': Pete, 'course': python, "total": 100_000,
-             'payment_choice': 'Наличные'},
-
-            {'user': Vasil, 'course': java, "total": 150_000,
-             'payment_choice': 'Перевод на счет'},
-
-            {'user': Vova, 'course': C_lang, "total": 200_000,
-             'payment_choice': 'Наличные'},
-
-            {'user': Nik, 'course': sql, "total": 70_000,
-             'payment_choice': 'Перевод на счет'}
-
+            {
+                "user": Pete,
+                "course": python,
+                "total": 100_000,
+                "payment_choice": "Наличные",
+            },
+            {
+                "user": Vasil,
+                "course": java,
+                "total": 150_000,
+                "payment_choice": "Перевод на счет",
+            },
+            {
+                "user": Vova,
+                "course": C_lang,
+                "total": 200_000,
+                "payment_choice": "Наличные",
+            },
+            {
+                "user": Nik,
+                "course": sql,
+                "total": 70_000,
+                "payment_choice": "Перевод на счет",
+            },
         ]
 
         payments_to_fill = []
