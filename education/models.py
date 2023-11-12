@@ -64,7 +64,10 @@ class Payment(models.Model):
         ("перевод на счет", "Перевод на счет"),
     ]
     payment_choice = models.CharField(
-        max_length=50, choices=payment_mode, verbose_name="способ оплаты"
+        max_length=50, choices=payment_mode, verbose_name="способ оплаты", **NULLABLE
+    )
+    is_confirmed = models.BooleanField(
+        default=False, verbose_name="подтверждение оплаты"
     )
 
     def __str__(self):

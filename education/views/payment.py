@@ -2,12 +2,19 @@ import os
 
 from django_filters.rest_framework import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import generics
+from rest_framework import generics, status
 
 import stripe
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
 
 from education.models import Payment
-from education.serializers.payment import PaymentListSerializer, PaymentDetailSerializer
+from education.serializers.payment import (
+    PaymentListSerializer,
+    PaymentDetailSerializer,
+    PaymentSerializer,
+)
 
 
 class PaymentListAPIView(generics.ListAPIView):
@@ -27,31 +34,46 @@ class PaymentRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Payment.objects.all()
 
 
+class PaymentCreateAPIView(generics.CreateAPIView):
+    serializer_class = PaymentSerializer
+    permission_classes = [IsAuthenticated]
 
+    def create(self, request, *args, **kwargs):
+        """Создает и обрабатывает платеж"""
 
-stripe.api_key = os.getenv('STRIPE_API_KEY')
+        stripe.api_key = os.getenv("STRIPE_API_KEY")
 
+        # Достаем id курса для оплаты
 
-# Создаем продукт
+        course_id = request.data.get("course")
 
-starter_subscription = stripe.Product.create(
-  name="Курс Python - разработчик 99.0",
-  description="Оплата за 10 месяцев",
-)
+        # Создаем платежное намерение
 
-# Создаем цену
+        response = stripe.PaymentIntent.create(
+            amount=2000,
+            currency="usd",
+            automatic_payment_methods={"enabled": True, "allow_redirects": "never"},
+        )
 
-starter_subscription_price = stripe.Price.create(
-  unit_amount=1200,
-  currency="usd",
-  recurring={"interval": "month"},
-  product=starter_subscription['id'],
-)
+        # Подтверждаем платеж
 
+        stripe.PaymentIntent.confirm(
+            response.id,
+            payment_method="pm_card_visa",
+        )
 
-# Создаем ссылку
+        # Забираем данные о пользователе, который исполнил платеж
 
+        user = self.request.user
 
-stripe.PaymentLink.create(line_items=[{"price": starter_subscription_price.id, "quantity": 1}])
+        # Заносим данные о платеже в БД
 
+        data = {"user": user.id, "course": course_id, "is_confirmed": True}
 
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(
+            serializer.data, status=status.HTTP_201_CREATED, headers=headers
+        )

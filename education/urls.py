@@ -16,7 +16,11 @@ from education.views.lesson import (
     LessonUpdateAPIView,
     LessonDestroyAPIView,
 )
-from education.views.payment import PaymentListAPIView, PaymentRetrieveAPIView
+from education.views.payment import (
+    PaymentListAPIView,
+    PaymentRetrieveAPIView,
+    PaymentCreateAPIView,
+)
 from education.views.subscription import (
     SubscriptionCreateAPIView,
     SubscriptionListAPIView,
@@ -47,6 +51,7 @@ urlpatterns = [
         "lesson/delete/<int:pk>/", LessonDestroyAPIView.as_view(), name="lesson_delete"
     ),
     path("payment/", PaymentListAPIView.as_view(), name="payment_list"),
+    path("payment/create/", PaymentCreateAPIView.as_view(), name="payment_create"),
     path(
         "payment/<int:pk>/", PaymentRetrieveAPIView.as_view(), name="payment_retrieve"
     ),

@@ -6,6 +6,7 @@ from education.models import Course, Lesson, Payment, Subscription
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "name",
         "image",
         "description",
@@ -16,6 +17,7 @@ class CourseAdmin(admin.ModelAdmin):
 @admin.register(Lesson)
 class LessonAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "name",
         "image",
         "description",
@@ -27,6 +29,7 @@ class LessonAdmin(admin.ModelAdmin):
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "user",
         "date",
         "course",
@@ -39,6 +42,7 @@ class PaymentAdmin(admin.ModelAdmin):
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "user",
         "course",
         "is_subscribed",
