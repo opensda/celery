@@ -84,7 +84,8 @@ class Payment(models.Model):
 
 class Subscription(models.Model):
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, verbose_name="пользователь", **NULLABLE
+        User, on_delete=models.CASCADE, verbose_name="пользователь",
+        related_name='subsription', **NULLABLE
     )
     course = models.ForeignKey(
         Course,

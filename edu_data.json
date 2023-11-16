@@ -3,7 +3,7 @@
     "model": "education.course",
     "pk": 1,
     "fields": {
-      "name": "Dhango - DRF SKY",
+      "name": "Celery_test",
       "image": "",
       "description": null,
       "user": null
@@ -15,8 +15,8 @@
     "fields": {
       "name": "Java",
       "image": "",
-      "description": null,
-      "user": null
+      "description": "",
+      "user": 1
     }
   },
   {
@@ -25,8 +25,8 @@
     "fields": {
       "name": "python",
       "image": "",
-      "description": null,
-      "user": null
+      "description": "",
+      "user": 2
     }
   },
   {
@@ -45,8 +45,8 @@
     "fields": {
       "name": "C",
       "image": "",
-      "description": null,
-      "user": null
+      "description": "",
+      "user": 5
     }
   },
   {
@@ -55,8 +55,88 @@
     "fields": {
       "name": "sql",
       "image": "",
+      "description": "",
+      "user": 3
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 7,
+    "fields": {
+      "name": "Django 888",
+      "image": "",
       "description": null,
       "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 8,
+    "fields": {
+      "name": "Django 828",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 9,
+    "fields": {
+      "name": "https://www.youtube.com/@settlefm/channels",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 10,
+    "fields": {
+      "name": "https://www.youtube.com/@settlefm/channels",
+      "image": "",
+      "description": null,
+      "user": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 11,
+    "fields": {
+      "name": "check sub",
+      "image": "",
+      "description": "",
+      "user": 4
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 12,
+    "fields": {
+      "name": "test_pay_course",
+      "image": "",
+      "description": "1224",
+      "user": 5
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 13,
+    "fields": {
+      "name": "GGG",
+      "image": "",
+      "description": "",
+      "user": 5
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 14,
+    "fields": {
+      "name": "Hahaha",
+      "image": "",
+      "description": "2123",
+      "user": 8
     }
   },
   {
@@ -65,7 +145,7 @@
     "fields": {
       "name": "deploy",
       "image": "",
-      "description": "просто деплой",
+      "description": "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
       "video_link": null,
       "course": null
     }
@@ -85,11 +165,33 @@
     "model": "education.lesson",
     "pk": 4,
     "fields": {
-      "name": "Информатика",
+      "name": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
       "image": "",
       "description": null,
       "video_link": null,
       "course": 2
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 5,
+    "fields": {
+      "name": "Google It",
+      "image": "",
+      "description": null,
+      "video_link": "https://www.youtube.com/watch?v=UbXYxaf1itQ&t=2167s",
+      "course": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 6,
+    "fields": {
+      "name": "test_post_by_postman",
+      "image": "",
+      "description": null,
+      "video_link": null,
+      "course": null
     }
   },
   {
@@ -101,7 +203,8 @@
       "course": 3,
       "lesson": null,
       "total": 100000.0,
-      "payment_choice": "наличные"
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
     }
   },
   {
@@ -113,7 +216,8 @@
       "course": 4,
       "lesson": null,
       "total": 150000.0,
-      "payment_choice": "наличные"
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
     }
   },
   {
@@ -125,7 +229,8 @@
       "course": 5,
       "lesson": null,
       "total": 200000.0,
-      "payment_choice": "перевод на счет"
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
     }
   },
   {
@@ -137,7 +242,180 @@
       "course": 6,
       "lesson": null,
       "total": 70000.0,
-      "payment_choice": "перевод на счет"
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "date": "2023-10-22T13:19:27Z",
+      "course": 3,
+      "lesson": null,
+      "total": 100000.0,
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "date": "2023-10-22T13:19:27Z",
+      "course": 3,
+      "lesson": null,
+      "total": 100000.0,
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "date": "2023-10-22T13:19:27Z",
+      "course": 3,
+      "lesson": null,
+      "total": 100000.0,
+      "payment_choice": "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
+      "is_confirmed": false
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 8,
+    "fields": {
+      "user": 5,
+      "date": null,
+      "course": 12,
+      "lesson": null,
+      "total": null,
+      "payment_choice": null,
+      "is_confirmed": true
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 9,
+    "fields": {
+      "user": 5,
+      "date": null,
+      "course": 12,
+      "lesson": null,
+      "total": null,
+      "payment_choice": null,
+      "is_confirmed": true
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 10,
+    "fields": {
+      "user": 5,
+      "date": null,
+      "course": 13,
+      "lesson": null,
+      "total": null,
+      "payment_choice": null,
+      "is_confirmed": true
+    }
+  },
+  {
+    "model": "education.payment",
+    "pk": 11,
+    "fields": {
+      "user": 5,
+      "date": null,
+      "course": 13,
+      "lesson": null,
+      "total": null,
+      "payment_choice": null,
+      "is_confirmed": true
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "course": 2,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "course": 6,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 3,
+    "fields": {
+      "user": null,
+      "course": null,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 4,
+    "fields": {
+      "user": null,
+      "course": null,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 5,
+    "fields": {
+      "user": null,
+      "course": null,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "course": 6,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 7,
+    "fields": {
+      "user": 5,
+      "course": 5,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "course": 3,
+      "is_subscribed": false
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 9,
+    "fields": {
+      "user": 8,
+      "course": 14,
+      "is_subscribed": true
     }
   }
 ]

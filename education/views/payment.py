@@ -1,4 +1,7 @@
+import datetime
 import os
+
+from dateutil.parser import *
 
 from django_filters.rest_framework import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
@@ -15,6 +18,10 @@ from education.serializers.payment import (
     PaymentDetailSerializer,
     PaymentSerializer,
 )
+
+from django.core.mail import send_mail
+from config import settings
+from users.models import User
 
 
 class PaymentListAPIView(generics.ListAPIView):
@@ -77,3 +84,13 @@ class PaymentCreateAPIView(generics.CreateAPIView):
         return Response(
             serializer.data, status=status.HTTP_201_CREATED, headers=headers
         )
+
+
+
+
+
+
+
+
+
+

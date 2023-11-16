@@ -9,6 +9,7 @@ from education.serializers.course import (
     CourseSerializer,
     CourseListSerializer,
 )
+from education.tasks import send_upd_info
 
 
 class CourseListAPIView(generics.ListAPIView):
@@ -33,8 +34,15 @@ class CourseUpdateAPIView(generics.UpdateAPIView):
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
     # permission_classes = [IsModerator | IsOwner]
+    def put(self, request, *args, **kwargs):
+        course_name = request.data.get("name")
+        send_upd_info.delay(course_name=course_name)
+        return self.update(request, *args, **kwargs)
+
 
 
 class CourseDestroyAPIView(generics.DestroyAPIView):
     queryset = Course.objects.all()
     # permission_classes = [IsAuthenticated, IsOwner]
+
+
