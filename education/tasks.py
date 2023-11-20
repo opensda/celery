@@ -27,7 +27,7 @@ def send_upd_info(course_name):
         recipient_list=emails
     )
 
-
+@shared_task
 def deactivate_user():
     users = User.objects.all()
     current_time = datetime.datetime.now()

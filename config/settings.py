@@ -124,11 +124,11 @@ SIMPLE_JWT = {
 }
 
 # URL-адрес брокера сообщений
-# CELERY_BROKER_URL = 'redis://localhost:6379'
+
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 
 # URL-адрес брокера результатов, также Redis
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 # Часовой пояс для работы Celery
