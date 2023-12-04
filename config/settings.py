@@ -12,14 +12,15 @@ SECRET_KEY = "django-insecure-5f@9r7f@go-5(l0*@#e&83d=p_qf%4(@nn%jil997_***b9*$(
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
+    'django.contrib.postgres',
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "drf_yasg",
@@ -62,15 +63,24 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.getenv("DATABASES_NAME"),
+#         "USER": os.getenv("DATABASES_USER"),
+#         "PASSWORD": os.getenv("DATABASES_PASSWORD"),
+#     }
+# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DATABASES_NAME"),
-        "USER": os.getenv("DATABASES_USER"),
-        "PASSWORD": os.getenv("DATABASES_PASSWORD"),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',   # Используется PostgreSQL
+        'NAME': 'postgres', # Имя базы данных
+        'USER': 'postgres', # Имя пользователя
+        'PASSWORD': '12345', # Пароль пользователя
+        'HOST': 'pgdb', # Наименование контейнера для базы данных в Docker Compose
+        'PORT': '5432',  # Порт базы данных
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -125,11 +135,11 @@ SIMPLE_JWT = {
 
 # URL-адрес брокера сообщений
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
 
 # URL-адрес брокера результатов, также Redis
 
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = "Australia/Tasmania"
